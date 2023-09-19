@@ -17,3 +17,24 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Task {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String?
+  updatedAt DateTime @updatedAt
+}
+
+model Address {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String?
+  updatedAt DateTime @updatedAt
+}
+
+model Otp {
+  code      Int?
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
